@@ -1,0 +1,7 @@
+WAD CAT 2 - Feature Implementation Notes
+
+1. Folder Layout: Corrected project architecture by consolidating all deliverables into the required 'submission/' directory.
+2. Feature 1 (Specials Menu): Implemented a dynamic, loop-rendered menu item system using array iteration to match the original design specifications.
+3. Feature 2 (Wishlist Engine): Programmed a real-time wishlist tracking system with interactive item addition and individual item removal functionality.
+4. Feature 3 (Form Validation): Developed client-side interactive form validation with a custom, dynamically injected notification banner UI.
+5. Deployment: Successfully deployed the fully responsive web application live on Render.

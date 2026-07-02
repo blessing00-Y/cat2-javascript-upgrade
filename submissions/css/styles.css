@@ -1,0 +1,290 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family:;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c62828;
+    padding: 1rem 2rem;
+}
+
+nav h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+    min-height: 70vh;
+}
+
+.hero img {
+    width: 45%;
+    border-radius: 15px;
+}
+
+.hero-text {
+    width: 45%;
+}
+
+.hero-text h2 {
+    color: #c62828;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    background-color: #c62828;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #8e0000;
+}
+
+/* SECTION HEADINGS */
+section h2 {
+    text-align: center;
+    color: #c62828;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* MENU SECTION */
+#menu {
+    padding: 3rem 2rem;
+}
+
+/* CSS GRID FOR CATEGORIES */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* CATEGORY CARDS */
+.menu-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.11);
+    transition: 0.3s;
+}
+
+.menu-category:hover {
+    transform: translateY(-3px);
+}
+
+.menu-category h3 {
+    color: #c62828;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #fce4ec;
+    padding-bottom: 0.3rem;
+    font-size: 1.4rem;
+}
+
+/* SEMANTIC MENU LISTS & LEADER DOTS */
+.menu-category ul {
+    list-style: none;
+}
+
+.menu-category li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+/* Creates a clean dotted alignment between name and price */
+.menu-category li::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px dotted #ccc;
+    margin: 0 0.6rem;
+    order: 2;
+}
+
+.item-name {
+    order: 1;
+    font-weight: 500;
+}
+
+.item-price {
+    order: 3;
+    font-weight: bold;
+    color: #c62828;
+}
+
+/* Combo descriptions formatting */
+.item-description {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    width: 100%;
+    order: 4;
+    margin-top: 0.1rem;
+}
+
+/* Makes list items wrapping special descriptions break nicely */
+.menu-category li:has(.item-description) {
+    flex-wrap: wrap;
+}
+.menu-category li:has(.item-description)::after {
+    display: none; /* Skips dotted line for long text descriptions */
+}
+.menu-category li:has(.item-description) .item-name {
+    font-weight: bold;
+}
+
+/* ABOUT */
+#about {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+#about p {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* CONTACT */
+#contact {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+#contact p {
+    margin-bottom: 0.5rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: #c62828;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:768px){
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero img {
+        width: 100%;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+}
+
+
+.hidden-caption {
+    display: none;
+    background-color: #fce4ec;
+    color: #c62828;
+    padding: 0.6rem 1rem;
+    border-left: 4px solid #c62828;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.hidden-caption.revealed {
+    display: block;
+}
+
+#wishlist-container li {
+    background: #fff8f0;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.6rem;
+    border-radius: 6px;
+    border: 1px dashed #c62828;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-btn {
+    background: #c62828;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.remove-btn:hover {
+    background: #8e0000;
+}

@@ -27,3 +27,29 @@ if (specialsContainer) {
         specialsContainer.appendChild(li);
     });
 }
+
+const wishlistInput = document.getElementById('wishlist-input');
+const addWishlistBtn = document.getElementById('add-wishlist-btn');
+const wishlistContainer = document.getElementById('wishlist-container');
+
+if (addWishlistBtn && wishlistInput && wishlistContainer) {
+    addWishlistBtn.addEventListener('click', () => {
+        const itemText = wishlistInput.value.trim();
+        if (itemText === '') return; 
+
+        const li = document.createElement('li');
+        li.innerHTML = `<span> ${itemText}</span>`;
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove-btn';
+        removeBtn.textContent = 'Remove';
+        
+        removeBtn.addEventListener('click', () => {
+            li.remove();
+        });
+
+        li.appendChild(removeBtn);
+        wishlistContainer.appendChild(li);
+        wishlistInput.value = ''; 
+    });
+}

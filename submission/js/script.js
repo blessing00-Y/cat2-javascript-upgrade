@@ -53,3 +53,38 @@ if (addWishlistBtn && wishlistInput && wishlistContainer) {
         wishlistInput.value = ''; 
     });
 }
+
+const contactForm = document.getElementById('contact-form');
+const formFeedback = document.getElementById('form-feedback');
+
+if (contactForm && formFeedback) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault(); 
+
+        const nameInput = contactForm.querySelector('input[type="text"]');
+        const emailInput = contactForm.querySelector('input[type="email"]');
+        
+        const nameValue = nameInput ? nameInput.value.trim() : '';
+        const emailValue = emailInput ? emailInput.value.trim() : '';
+
+        if (nameValue === '' || emailValue === '') {
+            formFeedback.textContent = "Please fill out all required fields!";
+            formFeedback.style.backgroundColor = "#ffe3e3";
+            formFeedback.style.color = "#d93838";
+            formFeedback.style.border = "1px solid #d93838";
+            formFeedback.style.display = "block";
+        } else {
+            formFeedback.textContent = `Thank you, ${nameValue}! Your message has been sent successfully.`;
+            formFeedback.style.backgroundColor = "#e3fcef";
+            formFeedback.style.color = "#24b263";
+            formFeedback.style.border = "1px solid #24b263";
+            formFeedback.style.display = "block";
+
+            contactForm.reset(); 
+        }
+
+        setTimeout(() => {
+            formFeedback.style.display = "none";
+        }, 4000);
+    });
+}
